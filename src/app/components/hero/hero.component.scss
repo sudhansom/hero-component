@@ -1,0 +1,48 @@
+.hero {
+  height: 470px;
+  background-image: url("https://folkelarsen.dk/cms-media/page/hero-frontpage.jpg");
+  background-size: cover;
+
+  &__caption-container {
+    height: 100%;
+    margin: 0 58px;
+    display: flex;
+  }
+  &__caption {
+    height: 50%;
+    width: 30%;
+    background-color: rgb(0, 59, 110);
+    padding: 40px;
+    align-self: flex-end;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 0 15%;
+
+    h2 {
+      font-size: 35px;
+      line-height: 40px;
+      font-weight: 100;
+      margin: 0;
+    }
+    p {
+      font-size: 16px;
+      line-height: 24px;
+      margin: 25px 0 10px;
+    }
+    button {
+      background-color: rgb(255, 255, 255);
+      color: rgb(0, 59, 110);
+      cursor: pointer;
+      margin-top: 10px;
+      border-radius: 5px;
+      padding: 12px 17px;
+      font-size: 16px;
+      font-weight: 700;
+      width: 45%;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      border: none;
+    }
+  }
+}
