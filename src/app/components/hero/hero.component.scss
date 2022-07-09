@@ -1,75 +1,110 @@
-.hero {
-  height: 470px;
-  background-image: url("https://folkelarsen.dk/cms-media/page/hero-frontpage.jpg");
-  background-size: cover;
-
-  &__caption-container {
-    height: 100%;
-    margin: 0 58px;
-    display: flex;
-    overflow: hidden;
-  }
-  &__caption {
-    height: 50%;
-    width: 28.5%;
-    background-color: rgb(0, 59, 110);
-    padding: 40px;
-    align-self: flex-end;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    margin: 0 16.5%;
-
-    h2 {
-      font-size: 35px;
-      line-height: 40px;
-      font-weight: 100;
-      margin: 0;
-    }
-    p {
-      font-size: 16px;
-      line-height: 24px;
-      margin: 25px 0 10px;
-    }
-    button {
-      background-color: rgb(255, 255, 255);
-      color: rgb(0, 59, 110);
-      cursor: pointer;
-      margin-top: 10px;
-      border-radius: 5px;
-      padding: 12px 17px;
-      font-size: 16px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      border: none;
-      width: 55%;
-    }
-  }
-}
-@media (max-width: 920px) {
+:host {
+  --max-content-width: 1200px;
   .hero {
+    margin: auto;
+    height: 470px;
+    background-image: var(--background-image);
+    background-size: var(--background-image-size);
+    background-position: var(--background-image);
+    background-repeat: no-repeat;
+    cursor: pointer;
+    &.fullPageWidth {
+      max-width: 100%;
+    }
+    &.noFullPageWidth {
+      max-width: var(--max-content-width);
+    }
+
     &__caption-container {
-      margin: 0;
+      height: 100%;
+      margin: auto;
+      padding-left: 20px;
+      display: flex;
+      overflow: hidden;
+      &.fullContentWidth {
+        --margin-left-right: 20px;
+        max-width: 100%;
+      }
+      &.noFullContentWidth {
+        max-width: var(--max-content-width);
+        --margin-left-right: 0;
+      }
     }
+
     &__caption {
-      width: 100%;
-      margin-right: 0;
-      margin-left: 20px;
-    }
-  }
-}
-@media (min-width: 920px) and (max-width: 1200px) {
-  .hero {
-    &__caption-container {
-      margin: 0;
-    }
-    &__caption {
+      height: 70%;
       width: 50%;
-      margin-right: 0;
+      background-color: rgb(0, 59, 110);
+      padding: 40px;
+      align-self: flex-end;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      &.right {
+        margin: 0 var(--margin-left-right) 0 auto;
+      }
+      &.left {
+        margin: 0 0 0 var(--margin-left-right);
+      }
+
+      h2 {
+        font-size: 35px;
+        line-height: 40px;
+        font-weight: 100;
+        margin: 0;
+        color: white;
+      }
+      p {
+        font-size: 16px;
+        line-height: 24px;
+        margin: 25px 0 10px;
+      }
+      button {
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 59, 110);
+        cursor: pointer;
+        margin-top: 10px;
+        border-radius: 5px;
+        padding: 12px 17px;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        border: none;
+        width: 45%;
+      }
     }
-    button {
-      width: 55%;
+  }
+  @media (max-width: 1200px) {
+    .hero {
+      button {
+        width: 45%;
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    .hero {
+      &__caption {
+        width: 100%;
+        margin-left: 20px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      &__caption-container {
+        box-sizing: border-box;
+      }
+      &__caption {
+        height: 80%;
+        width: 100%;
+      }
+
+      button {
+        width: 80%;
+      }
     }
   }
 }

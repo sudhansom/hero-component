@@ -1,0 +1,10 @@
+<div
+  *ngIf="teaserStack"
+  class="teaserStack"
+  [style.--column-count]="teaserStack.columnCount"
+>
+  <ngx-sitemule-teaser-2
+    *ngFor="let teaser of teaserStack.teaser"
+    [teaser]="teaser"
+  ></ngx-sitemule-teaser-2>
+</div>
